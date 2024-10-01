@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <TextView
+        android:id="@+id/tvUserProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Профиль пользователя"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Email:"
+        app:layout_constraintEnd_toStartOf="@+id/tvEmailValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserProfile" />
+
+    <TextView
+        android:id="@+id/tvEmailValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="example@email.com"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserProfile" />
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Никнейм:"
+        app:layout_constraintEnd_toStartOf="@+id/tvUsernameValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+    <TextView
+        android:id="@+id/tvUsernameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PurrfectCatLover123"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvUsername"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

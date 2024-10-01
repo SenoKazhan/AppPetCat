@@ -1,0 +1,27 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/catNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Имя кота" />
+
+    <EditText
+        android:id="@+id/catAgeInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Возраст кота"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/submitCatButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добавить кота" />
+
+</LinearLayout>
