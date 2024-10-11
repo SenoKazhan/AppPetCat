@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "354420572021",
+    "project_id": "appp3tc4t",
+    "storage_bucket": "appp3tc4t.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354420572021:android:68ca052bc87718559cdd3c",
+        "android_client_info": {
+          "package_name": "com.example.apppetcat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBUdPgyuK9TW0HKfYM8U7Tdmk9u4y9LMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

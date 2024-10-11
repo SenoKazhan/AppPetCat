@@ -5,13 +5,13 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Поле для ввода логина -->
+    <!-- Поле для ввода email -->
     <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Логин"
-        android:inputType="textPersonName" />
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
 
     <!-- Поле для ввода пароля -->
     <EditText
@@ -21,18 +21,11 @@
         android:hint="Пароль"
         android:inputType="textPassword" />
 
-    <!-- Кнопка для авторизации -->
+    <!-- Кнопка для регистрации -->
     <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Войти" />
-
-    <Button
-        android:id="@+id/buttonGoToRegister"
+        android:id="@+id/buttonRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Зарегистрироваться" />
-
 
 </LinearLayout>

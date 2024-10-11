@@ -28,7 +28,7 @@ class AddReminderActivity : AppCompatActivity() {
             if (reminderText.isNotEmpty()) {
                 // Получаем SharedPreferences и существующие напоминания
                 val sharedPreferences = getSharedPreferences("app_preferences", MODE_PRIVATE)
-                val remindersSet = sharedPreferences.getStringSet("reminders", mutableSetOf()) ?: mutableSetOf()
+                val remindersSet = sharedPreferences.getStringSet("reminders", mutableSetOf())?.toMutableSet() ?: mutableSetOf()
 
                 // Добавляем новое напоминание (поддерживается кириллица)
                 remindersSet.add(reminderText)
@@ -36,7 +36,9 @@ class AddReminderActivity : AppCompatActivity() {
 
                 // Сообщение об успешном добавлении
                 Toast.makeText(this, "Напоминание сохранено: $reminderText", Toast.LENGTH_SHORT).show()
-                reminderInput.text.clear() // Очистка поля ввода
+
+                // Очистка поля ввода
+                reminderInput.text.clear()
 
                 // Возвращаемся в HealthRemindersActivity
                 val intent = Intent(this, HealthRemindersActivity::class.java)
