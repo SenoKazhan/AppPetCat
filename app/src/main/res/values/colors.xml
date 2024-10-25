@@ -11,4 +11,5 @@
     <color name="colorPrimaryDark">#3700B3</color> <!-- Более темный оттенок -->
     <color name="colorAccent">#03DAC5</color> <!-- Яркий акцентный цвет -->
     <color name="gray">#808080</color> <!-- Серый цвет -->
+    <color name="importantReminderColor">#FF0000</color>
 </resources>

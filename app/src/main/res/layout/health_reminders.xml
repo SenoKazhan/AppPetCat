@@ -5,25 +5,40 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- ListView для отображения списка напоминаний -->
-    <ListView
-        android:id="@+id/remindersListView"
+    <!-- ScrollView для списка напоминаний, чтобы список мог прокручиваться -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:fillViewport="true">
 
-    <!-- Кнопка для добавления нового напоминания -->
-    <Button
-        android:id="@+id/addReminderButton"
+        <ListView
+            android:id="@+id/remindersListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false"/>
+    </ScrollView>
+
+    <!-- Контейнер для кнопок внизу экрана -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Добавить напоминание" />
+        android:orientation="vertical">
 
-    <!-- Кнопка для возврата на главный экран -->
-    <Button
-        android:id="@+id/backToMainButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Назад на главный экран" />
+        <!-- Кнопка для добавления нового напоминания -->
+        <Button
+            android:id="@+id/addReminderButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Добавить напоминание" />
+
+        <!-- Кнопка для возврата на главный экран -->
+        <Button
+            android:id="@+id/backToMainButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Назад на главный экран" />
+    </LinearLayout>
 
 </LinearLayout>

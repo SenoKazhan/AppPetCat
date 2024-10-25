@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Поле для ввода напоминания -->
+    <!-- Поле для ввода текста напоминания -->
     <EditText
         android:id="@+id/reminderInput"
         android:layout_width="match_parent"
@@ -13,17 +13,18 @@
         android:hint="Введите напоминание"
         android:inputType="text" />
 
-    <!-- Кнопка для сохранения напоминания -->
+    <!-- Кнопка для сохранения -->
     <Button
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Сохранить напоминание" />
+        android:text="Сохранить" />
 
     <!-- Кнопка для возврата на главный экран -->
     <Button
         android:id="@+id/backToMainButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Назад на главный экран" />
+        android:text="Отмена" />
+
 </LinearLayout>
