@@ -117,8 +117,6 @@ class RemindersAdapter(private val context: HealthRemindersActivity, private var
         }
     }
 
-
-
     // Метод для пометки важности напоминания
     private fun toggleImportantReminder(position: Int) {
         val reminder = reminders[position]
