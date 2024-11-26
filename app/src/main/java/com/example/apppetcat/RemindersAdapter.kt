@@ -1,5 +1,6 @@
 package com.example.apppetcat
 
+import android.util.TypedValue
 import android.view.GestureDetector
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -16,17 +17,15 @@ data class Reminder(var text: String, var isImportant: Boolean = false)
 class RemindersAdapter(private val context: HealthRemindersActivity, private var reminders: MutableList<Reminder>) : BaseAdapter() {
     private val gestureDetector = GestureDetector(context, GestureListener())
 
-    // Возвращает количество элементов в списке
     override fun getCount(): Int {
         return reminders.size
     }
 
-    // Возвращает элемент по позиции
     override fun getItem(position: Int): Reminder {
         return reminders[position]
     }
 
-    // Возвращает ID элемента по позиции
+
     override fun getItemId(position: Int): Long {
         return position.toLong()
     }
@@ -35,32 +34,36 @@ class RemindersAdapter(private val context: HealthRemindersActivity, private var
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view: View = convertView ?: LayoutInflater.from(context).inflate(R.layout.item_reminder, parent, false)
 
-        // Привязка напоминания к TextView
         val reminderText = view.findViewById<TextView>(R.id.reminderTextView)
         val reminder = reminders[position]
         reminderText.text = reminder.text
 
-        // Устанавливаем цвет текста в зависимости от важности напоминания
+        // Если напоминание важное, добавляем звёздочку и меняем фон и текст
         if (reminder.isImportant) {
+            view.setBackgroundColor(context.getColor(R.color.importantReminderBackground))
+            reminderText.text = "★ ${reminder.text}" // Звёздочка перед текстом
             reminderText.setTextColor(context.getColor(R.color.importantReminderColor))
+            reminderText.textSize = 20f
         } else {
+            view.setBackgroundColor(context.getColor(R.color.defaultReminderBackground))
+            reminderText.text = reminder.text
             reminderText.setTextColor(context.getColor(R.color.black))
+            reminderText.textSize = 18f
         }
 
-        // Настройка обработчика касаний с performClick
+
         view.setOnTouchListener { v, event ->
             if (gestureDetector.onTouchEvent(event)) {
-                v.performClick()  // Вызов performClick при обнаружении клика
+                v.performClick()  // Без него warning
                 true
             } else {
                 false
             }
         }
-
         return view
     }
 
-    // Внутренний класс для обработки жестов
+    // Внутренний класс для жестов
     private inner class GestureListener : GestureDetector.SimpleOnGestureListener() {
         // Обработка двойного нажатия для редактирования
         override fun onDoubleTap(e: MotionEvent): Boolean {
@@ -72,7 +75,7 @@ class RemindersAdapter(private val context: HealthRemindersActivity, private var
             return true
         }
 
-        // Обработка свайпа для пометки важности и удаления
+        // Обработка свайпа
         override fun onFling(
             e1: MotionEvent?,
             e2: MotionEvent,
@@ -82,7 +85,7 @@ class RemindersAdapter(private val context: HealthRemindersActivity, private var
             if (e1 != null) {
                 val position = getPosition(e1)
                 if (position != -1) {
-                    if (e2.x - e1.x > 100) {  // Свайп влево для важного
+                    if (e2.x - e1.x > 10) {  // Свайп влево для важного
                         toggleImportantReminder(position)
                         Toast.makeText(context, if (reminders[position].isImportant) "Помечено важным: ${reminders[position].text}" else "Снята важность: ${reminders[position].text}", Toast.LENGTH_SHORT).show()
                     } else if (e1.x - e2.x > 10) {  // Свайп вправо для удаления
@@ -93,7 +96,7 @@ class RemindersAdapter(private val context: HealthRemindersActivity, private var
             return true
         }
 
-        // Обработка одиночного нажатия для вызова performClick
+
         override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
             val position = getPosition(e)
             if (position != -1) {

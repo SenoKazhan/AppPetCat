@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context=".MainActivity">
 
     <!-- RecyclerView для списка котов -->
@@ -18,6 +19,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_cat_card" />
+
+    <!-- Иконка плюса для добавления кота -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="50dp"
+        android:backgroundTint="@color/nameButton">
+
+        <!-- Иконка плюса для добавления кота -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAddCat" android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:contentDescription="Добавить кота"
+        app:srcCompat="@drawable/ic_add"
+        app:backgroundTint="@color/nameButton"
+        android:elevation="6dp"
+        android:layout_margin="16dp"
+        android:layout_centerInParent="true" />
+
+
+    </androidx.cardview.widget.CardView>
 
     <!-- Контейнер для кнопок -->
     <LinearLayout
@@ -33,6 +58,7 @@
             android:id="@+id/btnGoToHealthReminders"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
             android:text="Напоминания о здоровье" />
 
         <!-- Кнопка перехода на страницу ухода за питомцем -->
@@ -40,6 +66,7 @@
             android:id="@+id/btnGoToPetCare"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
             android:text="Уход за питомцем" />
 
         <!-- Кнопка перехода на профиль -->
@@ -47,19 +74,9 @@
             android:id="@+id/btnGoToProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
             android:text="Профиль" />
 
     </LinearLayout>
-
-    <!-- FloatingActionButton для добавления нового кота -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddCat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:contentDescription="Add Cat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

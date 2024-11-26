@@ -5,12 +5,12 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Поле для ввода логина -->
+    <!-- Поле для ввода почты -->
     <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Логин"
+        android:hint="Почта"
         android:inputType="textPersonName" />
 
     <!-- Поле для ввода пароля -->

@@ -1,48 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="8dp">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/catNameTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        android:text="Cat Name"
+        android:textSize="18sp" />
 
-        <!-- Изображение кота -->
-        <ImageView
-            android:id="@+id/catImage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_cat_placeholder" />
+    <TextView
+        android:id="@+id/catAgeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age: 0" />
 
-        <!-- Информация о коте -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_marginStart="16dp">
-
-            <TextView
-                android:id="@+id/catName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cat Name"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/catAge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Age: 2 years"
-                android:textSize="14sp" />
-        </LinearLayout>
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+    <!-- Кнопка удаления кота -->
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/nameButton"
+        android:text="Удалить" />
+</LinearLayout>

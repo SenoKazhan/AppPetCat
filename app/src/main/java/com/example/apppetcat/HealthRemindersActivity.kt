@@ -24,10 +24,10 @@ class HealthRemindersActivity : AppCompatActivity() {
         // Инициализация адаптера и загрузка списка напоминаний
         val savedRemindersSet = sharedPreferences.getStringSet("reminders", setOf()) ?: setOf()
 
-// Преобразуем Set<String> в List<Reminder>
+
         val savedReminders = savedRemindersSet.map { Reminder(it) }
 
-// Преобразуем List<Reminder> в MutableList для адаптера
+
         remindersAdapter = RemindersAdapter(this, savedReminders.toMutableList())
 
 
